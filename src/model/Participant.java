@@ -10,6 +10,7 @@ public class Participant {
 	private String photo;
 	private String birthday;
 	private Participant next;
+	private Participant prev;
 	
 	
 	
@@ -67,6 +68,14 @@ public class Participant {
 		this.gender = gender;
 	}
 
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	public String getPhoto() {
 		return photo;
 	}
@@ -90,9 +99,33 @@ public class Participant {
 	public void setNext(Participant next) {
 		this.next = next;
 	}
+
+	public Participant getPrev() {
+		return prev;
+	}
+
+	public void setPrev(Participant prev) {
+		this.prev = prev;
+	}
+
 	public String toString() {
 		return ("ID: "+id + "\nName: "+ first_name +" "+ last_name+"\nEmail: " + email+"\nGender: "+ gender+"\nBirthday: " + birthday+"\nCountry:"+country);
 		
 	}
-	
+
+	public void addBefore(Participant n) {
+		if( prev != null )
+			prev.next = n;
+		n.prev = prev;
+		n.next = this;
+		prev = n;
+	}
+
+	public void addAfter(Participant n) {
+		n.next = next;
+		if( next != null )
+			next.prev = n;
+		n.prev = this;
+		next = n;
+	}
 }
