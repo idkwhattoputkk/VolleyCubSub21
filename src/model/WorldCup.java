@@ -150,7 +150,7 @@ public class WorldCup {
 	private String printTreeReal(Assistant n, String s, String country) {
 		String msj = "";
 		if (n!=null) {
-			printTreeReal(n.getLeft(), "   ", country);
+			printTreeReal(n.getRight(), "   ", country);
 			if(n.getCountry().equalsIgnoreCase(country))
 				msj += n.getCountry() + s;
 			printTreeReal(n.getLeft(), "   ", country);

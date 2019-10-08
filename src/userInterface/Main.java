@@ -53,7 +53,7 @@ public class Main {
 				switch (opcion){
 					case 1:
 						ini = System.currentTimeMillis();
-						System.out.println("Digite el pais para mostrar la lista");
+						System.out.println("Digite el pais para mostrar la arbol");
 						System.out.println(c.tree(reader.nextLine()));
 						fin = System.currentTimeMillis();
 						System.out.println("Tiempo en mili segundos: ");
@@ -61,7 +61,7 @@ public class Main {
 						break;
 					case 2:
 						ini = System.currentTimeMillis();
-						System.out.println("Digite el pais para mostrar el arbol");
+						System.out.println("Digite el pais para mostrar el lista");
 						System.out.println(c.printLinkedList(reader.nextLine()));
 						fin = System.currentTimeMillis();
 						System.out.println("Tiempo en mili segundos: ");
