@@ -149,9 +149,10 @@ public class WorldCup {
 
 	private String printTreeReal(Assistant n, String s, String country) {
 		String msj = "";
-		if (n.getCountry().equalsIgnoreCase(country)) {
+		if (n!=null) {
 			printTreeReal(n.getLeft(), "   ", country);
-			msj += n.getCountry() + s;
+			if(n.getCountry().equalsIgnoreCase(country))
+				msj += n.getCountry() + s;
 			printTreeReal(n.getLeft(), "   ", country);
 		}
 		return msj;
@@ -159,8 +160,10 @@ public class WorldCup {
 	public String printLinkedList(String country){
 		String msj="";
 		Participant actual = firstP;
-		while( actual != null && actual.getCountry().equalsIgnoreCase(country) ) {
-			msj += actual.toString()+"\n";
+		while( actual != null) {
+			if(actual.getCountry().equalsIgnoreCase(country))
+				msj += actual.toString()+"\n";
+
 			actual = actual.getNext();
 		}
 		return msj;

@@ -54,7 +54,7 @@ public class Main {
 					case 1:
 						ini = System.currentTimeMillis();
 						System.out.println("Digite el pais para mostrar la lista");
-						System.out.println(c.printLinkedList(reader.nextLine()));
+						System.out.println(c.tree(reader.nextLine()));
 						fin = System.currentTimeMillis();
 						System.out.println("Tiempo en mili segundos: ");
 						System.out.println(fin-ini);
@@ -62,7 +62,7 @@ public class Main {
 					case 2:
 						ini = System.currentTimeMillis();
 						System.out.println("Digite el pais para mostrar el arbol");
-						System.out.println(c.tree(reader.nextLine()));
+						System.out.println(c.printLinkedList(reader.nextLine()));
 						fin = System.currentTimeMillis();
 						System.out.println("Tiempo en mili segundos: ");
 						System.out.println(fin-ini);
