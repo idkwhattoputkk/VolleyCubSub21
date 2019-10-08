@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac898451-b4c9-4854-9784-c9afa00649bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/MOCK_DATA.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/WorldCupTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/WorldCupTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Assistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Assistant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Participant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/WorldCup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/WorldCup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/WorldCupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/WorldCupTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userInterface/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInterface/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userInterface/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userInterface/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +31,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RkQw5QIw67ezWAIR8CZEEHK4bW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -62,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WorldCupTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="userInterface.Main" />
       <module name="VolleyCubSub21" />
@@ -115,11 +122,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

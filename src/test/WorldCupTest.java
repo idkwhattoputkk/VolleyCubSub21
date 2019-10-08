@@ -1,11 +1,10 @@
 package test;
 
 import static junit.framework.Assert.fail;
-import static org.junit.jupiter.api.Assertions.*;
-
 import model.AssistantRepetidoException;
 import model.WorldCup;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.File;
 import java.io.IOException;

@@ -113,7 +113,7 @@ public class Assistant {
 	public void insert(Assistant p) throws AssistantRepetidoException {
 		
 		if(p.id==id) 
-			throw new AssistantRepetidoException(p.id);
+//			throw new AssistantRepetidoException(p.id);
 		if(p.id>id) {
 			if(right==null)
 				right = p;
@@ -138,10 +138,19 @@ public class Assistant {
         else
             return ( right == null ) ? null : right.search( aidi );
 	}
+	@Override
 	public String toString() {
 		return ("ID: "+id + "\nName: "+ first_name +" "+ last_name+"\nEmail: " + email+"\nGender: "+ gender+"\nBirthday: " + birthday+"\nCountry:"+country);
 		
 	}
-	
-	
+
+
+	public Assistant searchByCountry(String c) {
+		if( c.equalsIgnoreCase(country) )
+			return this;
+		else if( c.compareToIgnoreCase(country)<0)
+			return ( left == null ) ? null : left.searchByCountry(c);
+		else
+			return ( right == null ) ? null : right.searchByCountry(c);
+	}
 }

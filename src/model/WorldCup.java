@@ -31,17 +31,23 @@ public class WorldCup {
         	int i=0;
             br = new BufferedReader(new FileReader(f));
             while ((line = br.readLine()) != null) {
-            	
-                String[] lines = line.split(cvsSplitBy);
-                	int id =Integer.parseInt(lines[0]);
-                	Assistant p = new Assistant(id, lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7]);
-                	if(raizAssistant == null) 
-                		raizAssistant = p;
-                		
-                	else
-                		raizAssistant.insert(p);
-                	numAssistants++;
-                }
+
+				String[] lines = line.split(cvsSplitBy);
+				int id = Integer.parseInt(lines[0]);
+				Assistant p = new Assistant(id, lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7]);
+				if (raizAssistant == null)
+					raizAssistant = p;
+
+				else
+					raizAssistant.insert(p);
+				numAssistants++;
+
+				while(i<(numAssistants/2)){
+					addOrderedParticipants(id, lines[1], lines[2], lines[3], lines[4], lines[5], lines[6], lines[7]);
+					numParticipants++;
+					i++;
+				}
+			}
         } catch (FileNotFoundException e) {
             e.printStackTrace();
 	}
@@ -65,11 +71,12 @@ public class WorldCup {
 	        }
 	        return actual;
 	}
-	public void addOrderedParticipants(Assistant a) {
-		Participant n = new Participant(a.getId(),a.getFirst_name(),a.getLast_name(),a.getEmail(),a.getGender(),a.getCountry(),a.getPhoto(),a.getBirthday());
+	public void addOrderedParticipants(int id, String first_name, String last_name, String email, String gender, String country, String photo,
+									   String birthday) {
+		Participant n = new Participant(id, first_name, last_name, email,gender,country,photo,birthday);
 		if( firstP == null )
 			firstP = n;
-		else if( firstP.getId() >= a.getId() )
+		else if( firstP.getId() >= id )
 		{
 			firstP.addBefore(n);
 			firstP= n;
@@ -78,7 +85,7 @@ public class WorldCup {
 		{
 			Participant temp0 = null;
 			Participant temp1 = firstP;
-			while( temp1 != null && temp1.getId() < a.getId() )
+			while( temp1 != null && temp1.getId() < id )
 			{
 				temp0 = temp1;
 				temp1 = temp1.getNext();
@@ -132,11 +139,32 @@ public class WorldCup {
 		this.firstP = firstP;
 	}
 
+	public Assistant searchByCountry(String c){
+		return raizAssistant == null ? null : raizAssistant.searchByCountry(c);
+	}
 
+	public String printTree(String country) {
+		return printTreeReal(raizAssistant,"",country);
+	}
 
-	public String printTree() {
-		// TODO Auto-generated method stub
-		return null;
+	private String printTreeReal(Assistant n, String s, String country) {
+		String msj = "";
+		if (n.getCountry().equalsIgnoreCase(country)) {
+			printTreeReal(n.getLeft(), "   ", country);
+			msj += n.getCountry() + s;
+			printTreeReal(n.getLeft(), "   ", country);
+		}
+		return msj;
+	}
+	public String printLinkedList(String country){
+		String msj="";
+		Participant actual = firstP;
+		while( actual != null && actual.getCountry().equalsIgnoreCase(country) ) {
+			msj += actual.toString()+"\n";
+			actual = actual.getNext();
+		}
+		return msj;
 	}
 }
+
 

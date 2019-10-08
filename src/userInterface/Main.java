@@ -47,7 +47,27 @@ public class Main {
 				System.out.println(fin-ini);
 				break;
 			case 4:
-				System.out.println(c.getSub21().printTree());
+				System.out.println("1. Mostar arbol por pais");
+				System.out.println("2. Mostrar la lista por pais");
+				int opcion = Integer.parseInt(reader.nextLine());
+				switch (opcion){
+					case 1:
+						ini = System.currentTimeMillis();
+						System.out.println("Digite el pais para mostrar la lista");
+						System.out.println(c.printLinkedList(reader.nextLine()));
+						fin = System.currentTimeMillis();
+						System.out.println("Tiempo en mili segundos: ");
+						System.out.println(fin-ini);
+						break;
+					case 2:
+						ini = System.currentTimeMillis();
+						System.out.println("Digite el pais para mostrar el arbol");
+						System.out.println(c.tree(reader.nextLine()));
+						fin = System.currentTimeMillis();
+						System.out.println("Tiempo en mili segundos: ");
+						System.out.println(fin-ini);
+						break;
+				}
 				break;
 			case 5:
 				out=true;

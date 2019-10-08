@@ -10,8 +10,7 @@ import model.AssistantRepetidoException;
 import model.WorldCup;
 
 public class Controller {
-	private final static String FILE_PATH="data"+File.separator+"totalInfo.csv";
-	private final static String FILE_PATH2="data"+File.separator+"totalInfo.csv";
+	private final static String FILE_PATH="data"+File.separator+"info.csv";
 	private WorldCup sub21;
 	
 	public Controller() {
@@ -25,7 +24,7 @@ public class Controller {
 			if(!d.exists())
 				d.mkdir();
 			
-			File f = new File(FILE_PATH2);
+			File f = new File(FILE_PATH);
 			sub21.chargeData(f);
 			msg="los archivos se han cargado con exito";
 			}catch(AssistantRepetidoException | NumberFormatException | IOException e) {
@@ -52,7 +51,14 @@ public class Controller {
 		}
 		return toReturn;
 	}
-
+	public String printLinkedList(String country){
+		String msj="";
+		msj=sub21.printLinkedList(country);
+		return msj;
+	}
+	public String tree(String country){
+		return sub21.printTree(country);
+	}
 	public WorldCup getSub21() {
 		return sub21;
 	}
