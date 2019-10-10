@@ -1,6 +1,8 @@
 package model;
 
 
+import java.util.Collection;
+
 public class Assistant {
 	private int id;
 	private String first_name;
@@ -113,7 +115,7 @@ public class Assistant {
 	public void insert(Assistant p) throws AssistantRepetidoException {
 		
 		if(p.id==id) 
-//			throw new AssistantRepetidoException(p.id);
+			throw new AssistantRepetidoException(p.id);
 		if(p.id>id) {
 			if(right==null)
 				right = p;
@@ -152,5 +154,13 @@ public class Assistant {
 			return ( left == null ) ? null : left.searchByCountry(c);
 		else
 			return ( right == null ) ? null : right.searchByCountry(c);
+	}
+
+	public void inoder(Collection con) {
+		if(left!=null)
+			left.inoder(con);
+		con.add(country);
+		if(right!=null)
+			right.inoder(con);
 	}
 }

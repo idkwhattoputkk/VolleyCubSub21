@@ -2,6 +2,8 @@ package userInterface;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.swing.JOptionPane;
 
@@ -55,9 +57,6 @@ public class Controller {
 		String msj="";
 		msj=sub21.printLinkedList(country);
 		return msj;
-	}
-	public String tree(String country){
-		return sub21.printTree(country);
 	}
 	public WorldCup getSub21() {
 		return sub21;

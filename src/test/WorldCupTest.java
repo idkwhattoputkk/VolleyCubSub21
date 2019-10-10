@@ -18,7 +18,7 @@ class WorldCupTest {
 	}
 	void setUpScenery2() throws IOException, AssistantRepetidoException {
 		c = new WorldCup();
-		File f = new File("data/totalInfo.csv");
+		File f = new File("data"+File.separator+"totalInfo.csv");
 		c.chargeData(f);
 	}
 	void setUpScenery3() throws IOException, AssistantRepetidoException {
@@ -42,8 +42,8 @@ class WorldCupTest {
 	void testSearchAssistant() {
 		try {
 			setUpScenery2();
-			assertEquals(c.searchAssistant(125).getEmail(),"elemar3g@prnewswire.com");
-			assertEquals(c.searchAssistant(63).getEmail(),"siacobetto1q@slate.com");
+			assertEquals(c.searchAssistant(1).getEmail(),"dkrikorian0@bigcartel.com");
+			assertEquals(c.searchAssistant(100).getEmail(),"epurtell2r@oakley.com");
 			assertEquals(c.searchAssistant(12).getEmail(),"jkwietakb@sakura.ne.jp");
 		} catch (IOException | AssistantRepetidoException e) {
 			fail("Excepcion no esperada");

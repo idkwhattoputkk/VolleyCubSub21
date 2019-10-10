@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class WorldCup {
 	private Assistant raizAssistant;
@@ -143,19 +145,14 @@ public class WorldCup {
 		return raizAssistant == null ? null : raizAssistant.searchByCountry(c);
 	}
 
-	public String printTree(String country) {
-		return printTreeReal(raizAssistant,"",country);
-	}
-
-	private String printTreeReal(Assistant n, String s, String country) {
-		String msj = "";
-		if (n!=null) {
-			printTreeReal(n.getRight(), "   ", country);
-			if(n.getCountry().equalsIgnoreCase(country))
-				msj += n.getCountry() + s;
-			printTreeReal(n.getLeft(), "   ", country);
+	public Collection printTree() {
+		if(raizAssistant==null) {
+			return null;
+		}else {
+			Collection con = new ArrayList();
+			raizAssistant.inoder(con);
+			return con;
 		}
-		return msj;
 	}
 	public String printLinkedList(String country){
 		String msj="";
