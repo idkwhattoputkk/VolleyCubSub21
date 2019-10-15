@@ -156,11 +156,13 @@ public class Assistant {
 			return ( right == null ) ? null : right.searchByCountry(c);
 	}
 
-	public void inoder(Collection con) {
+	public void inoder(Collection con, String c) {
 		if(left!=null)
-			left.inoder(con);
-		con.add(country);
+			left.inoder(con, c);
+		if(country.equalsIgnoreCase(c)) {
+			con.add(this.toString()+"\n");
+		}
 		if(right!=null)
-			right.inoder(con);
+			right.inoder(con, c);
 	}
 }

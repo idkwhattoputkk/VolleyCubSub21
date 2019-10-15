@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.swing.JOptionPane;
 
 import model.Assistant;
 import model.AssistantRepetidoException;

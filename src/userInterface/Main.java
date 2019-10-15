@@ -54,9 +54,8 @@ public class Main {
 					case 1:
 						ini = System.currentTimeMillis();
 						System.out.println("Digite el pais para mostrar la arbol");
-						for (int i = 0; i < c.getSub21().printTree().size() ; i++) {
-							System.out.println(c.getSub21().printTree());
-						}
+						String s = reader.nextLine();
+						System.out.println(c.getSub21().printTree(s));
 						fin = System.currentTimeMillis();
 						System.out.println("Tiempo en mili segundos: ");
 						System.out.println(fin-ini);

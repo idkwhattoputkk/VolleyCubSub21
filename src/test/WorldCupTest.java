@@ -1,22 +1,23 @@
 package test;
 
-import static junit.framework.Assert.fail;
-import model.AssistantRepetidoException;
-import model.WorldCup;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
 import java.io.IOException;
 
+import org.junit.jupiter.api.Test;
+
+import model.AssistantRepetidoException;
+import model.WorldCup;
+
 class WorldCupTest {
-	WorldCup c;
-	void setUpScenery1() throws IOException, AssistantRepetidoException {
+	private WorldCup c;
+	public void setUpScenery1() throws IOException, AssistantRepetidoException {
 		c = new WorldCup();
 		File f = new File("data"+File.separator+"info.csv");
 		c.chargeData(f);
 	}
-	void setUpScenery2() throws IOException, AssistantRepetidoException {
+	public void setUpScenery2() throws IOException, AssistantRepetidoException {
 		c = new WorldCup();
 		File f = new File("data"+File.separator+"totalInfo.csv");
 		c.chargeData(f);
@@ -26,7 +27,7 @@ class WorldCupTest {
 		File f = new File("data"+File.separator+"info2.csv");
 		c.chargeData(f);
 	}
-	@org.junit.jupiter.api.Test
+	@Test
 	void testChargeData() {
 		try {
 			setUpScenery1();
@@ -38,7 +39,7 @@ class WorldCupTest {
 			assertEquals(e.getMessage() ,"Ya existe un asistente con ese id: " +1);
 		}
 	}
-	@org.junit.jupiter.api.Test
+	@Test
 	void testSearchAssistant() {
 		try {
 			setUpScenery2();
@@ -50,7 +51,7 @@ class WorldCupTest {
 		}
 	}
 
-	@org.junit.jupiter.api.Test
+	@Test
 	void testSearchParticipant() {
 		try {
 			setUpScenery3();
@@ -62,5 +63,6 @@ class WorldCupTest {
 		}
 
 	}
+
 
 }

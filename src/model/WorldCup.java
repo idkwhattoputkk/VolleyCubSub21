@@ -145,12 +145,12 @@ public class WorldCup {
 		return raizAssistant == null ? null : raizAssistant.searchByCountry(c);
 	}
 
-	public Collection printTree() {
+	public Collection printTree(String s) {
 		if(raizAssistant==null) {
 			return null;
 		}else {
 			Collection con = new ArrayList();
-			raizAssistant.inoder(con);
+			raizAssistant.inoder(con, s);
 			return con;
 		}
 	}
