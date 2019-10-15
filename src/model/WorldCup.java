@@ -157,7 +157,7 @@ public class WorldCup {
 	public String printLinkedList(String country){
 		String msj="";
 		Participant actual = firstP;
-		while( actual != null) {
+		while( actual.getNext() != null) {
 			if(actual.getCountry().equalsIgnoreCase(country))
 				msj += actual.toString()+"\n";
 

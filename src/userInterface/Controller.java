@@ -42,7 +42,7 @@ public class Controller {
 		}
 		return toReturn;
 	}
-	public String buscarParticipant(int id) throws NullPointerException{
+	public String buscarParticipant(int id) {
 
 		String toReturn="";
 		try {
